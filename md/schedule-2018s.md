@@ -23,8 +23,8 @@
 |03/28| [Vector Space Models]() | [ex]() | [quiz 7]() |
 |04/02| [Cluster Analysis]() | [ex]() |  |
 |04/04| [Cluster Analysis]() | [ex]() | [quiz 8]() |
-|04/09| [Machine Learning]() | [ex]() |  |
-|04/11| [Machine Learning]() | [ex]() | [quiz 9]() |
+|04/09| [Supervised Learning]() | [ex]() |  |
+|04/11| [Supervised Learning]() | [ex]() | [quiz 9]() |
 |04/16| [Distributional Semantics]() | [ex]() |  |
 |04/18| [Distributional Semantics]() | [ex]() | [quiz 10]() |
 |04/23| Project Presentation |  |  |
