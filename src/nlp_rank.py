@@ -28,7 +28,8 @@ def crawl_aclbib(map_file, out_dir):
     """
     fin = open(map_file)
 
-    for line in fin:
+    for i, line in enumerate(fin):
+        if i == 0: continue  # skip the header
         l = line.split()
 
         if l and l[2] == 'Y':
