@@ -23,7 +23,7 @@ __author__ = 'Jinho D. Choi'
 url = 'https://raw.githubusercontent.com/emory-courses/data-science/master/dat/courses/qtm-spring-2018.html'
 r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
-schedule = soup.find('div', {'id': 'schedule-landing-page'})
+schedule = soup.find('div', {'id': 'exam_schedule-landing-page'})
 
 for t in schedule.find_all('div', {'class': 'schedules'}):
     print(t)

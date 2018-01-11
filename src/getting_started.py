@@ -18,4 +18,4 @@ import requests
 __author__ = 'Jinho D. Choi'
 
 r = requests.get('http://www.mathcs.emory.edu/~choi')
-print(r)
+print(r.text)

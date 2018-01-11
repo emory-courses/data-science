@@ -19,7 +19,6 @@ from bs4 import BeautifulSoup
 
 __author__ = 'Jinho D. Choi'
 
-
 TIME = re.compile('(\d{1,2}:\d\d)\s+([A-Za-z]+)')
 
 def get_key(time, day):
@@ -52,48 +51,27 @@ def read_exam_schedule(url):
 
 url = 'http://registrar.emory.edu/faculty-staff/exam-exam_schedule/spring-2018.html'
 r = requests.get(url)
+print(r)
+
 html = BeautifulSoup(r.text, 'html.parser')
 tbody = html.find('tbody')
-schedule = {}
+exam_schedule = {}
 
 for tr in tbody.find_all('tr'):
-    tds = tr.find_all('td')
+    tds  = tr.find_all('td')
     meet = tds[0].string
-    day = tds[1].string
+    day  = tds[1].string
     date = tds[2].string
     time = tds[3].string
-    schedule[meet] = (day, date, time)
+    exam_schedule[meet] = (day, date, time)
 
-#
-# url = 'http://registrar.emory.edu/faculty-staff/exam-schedule/spring-2018.html'
-# exam_schedule = read_exam_schedule(url)
-# for k,v in exam_schedule:
-#     print('%10s: %s' % (k, v))
+for k, v in exam_schedule.items():
+    print('%10s: %s' % (k, str(v)))
 
+m = TIME.match('8:00 MW')
+print('Time: %s, Day: %s' % (m.group(1), m.group(2)))
+m = TIME.match('12:30 TThF')
+print('Time: %s, Day: %s' % (m.group(1), m.group(2)))
 
-# url = 'http://atlas.college.emory.edu/schedules/index.php'
-# s = requests.session()
-# r = s.get(url)
-# r = s.get(url, params={'select': 'QTM'})
-#
-# url = 'http://atlas.college.emory.edu/schedules/index.php'
-# s = requests.session()
-# r = s.get(url)
-# print(r.text)
-#
-# url = 'http://atlas.college.emory.edu/schedules/index.php'
-# r = s.get(url, params={'select': 'QTM'})
-# print(r.text)
-
-# read_exam_schedule(url)
-
-# wd = webdriver.Chrome()
-# url = 'https://www.usnews.com/best-colleges/search?_mode=table&page=91&_page=91'
-#
-# wd.get(url)
-# print(wd.page_source)
-# wd.quit()
-
-
-# WebDriverWait(wd, 10).until(expected_conditions.visibility_of_all_elements_located((By.ID, 'search-application-results-view')))
-
+m = TIME.match('Math*')
+print(m)
