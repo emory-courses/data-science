@@ -13,28 +13,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
-import os
-import glob
-import bibtexparser
 from urllib.request import urlopen
 
 import requests
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
+from bs4 import BeautifulSoup
 
 __author__ = 'Jinho D. Choi'
 
+url = 'https://raw.githubusercontent.com/emory-courses/data-science/master/dat/courses/qtm-spring-2018.html'
+r = requests.get(url)
+soup = BeautifulSoup(r.text, 'html.parser')
+schedule = soup.find('div', {'id': 'schedule-landing-page'})
 
-from bs4 import BeautifulSoup
-from selenium import webdriver
+for t in schedule.find_all('div', {'class': 'schedules'}):
+    print(t)
 
 
-url = 'http://nlp.mathcs.emory.edu'
 
-driver = webdriver.Firefox()
-driver.get(url)
-# WebDriverWait(driver, 10000).until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "schedule-landing-page"))) # waits till the element with the specific id appears
+
+
 
 # html = driver.page_source
 #

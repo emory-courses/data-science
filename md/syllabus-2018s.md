@@ -13,9 +13,10 @@
 
 ## Grading
 
-* 10+1 take-home quizzes: 10%.
-* 2 homework assignments: 20%.
-* 1 group project: 20%.
+* Take-home quizzes: 20%.
+* Homework assignments: 30%.
+* Project Proposal: 20%
+* Group project: 20%.
 * 1 midterm exam: 20%.
 * Final exam: 30%.
 * Your work is governed by the [Emory Honor Code](http://catalog.college.emory.edu/academic/policy/honor_code.html) and the [Math/CS SPCA](http://mathcs.emory.edu/spca.php). Honor code violations on any submission will be referred to the [Emory Honor Council](http://college.emory.edu/home/academic/honor-council/).
