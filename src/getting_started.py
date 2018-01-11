@@ -13,12 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
-import numpy as np
+import requests
 
 __author__ = 'Jinho D. Choi'
 
-a = np.array([[0, 1, 2], [3, 4, 5]])
-b = np.array([[4, 5, 6], [7, 8, 9]])
-c = a + b
-
-print(c)
+r = requests.get('http://www.mathcs.emory.edu/~choi')
+print(r)
