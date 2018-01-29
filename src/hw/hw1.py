@@ -15,6 +15,21 @@
 # ========================================================================
 import re
 
-RE_PHONE_NUMBER = re.compile('your expression')
+RE_NUMBER = re.compile('your expression')
 RE_DATE = re.compile('your expression')
-RE_EMOTICON = re.compile('your expression')
+
+
+def norm_number(s):
+    """
+    :param s: the input string
+    :return: the input string where all numbers are converted into their digit-forms.
+    """
+    return s
+
+
+def norm_date(s):
+    """
+    :param s: the input string
+    :return: the input string where all dates are standarized.
+    """
+    return s
