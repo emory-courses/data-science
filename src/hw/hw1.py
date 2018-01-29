@@ -13,11 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
-import requests
+import re
 
-__author__ = 'Jinho D. Choi'
-
-r = requests.get('http://www.mathcs.emory.edu/~choi')
-
-with open('hw0.html', 'w') as fout:
-    fout.write(r.text)
+RE_PHONE_NUMBER = re.compile('your expression')
+RE_DATE = re.compile('your expression')
+RE_EMOTICON = re.compile('your expression')
