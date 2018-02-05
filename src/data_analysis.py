@@ -14,8 +14,34 @@
 # limitations under the License.
 # ========================================================================
 import csv
+from types import SimpleNamespace
+
+import matplotlib.pyplot as plt
 
 __author__ = 'Jinho D. Choi'
+
+
+def plot_dict(d):
+    xs, ys = zip(*[(k, v) for k, v in sorted(d.items())])
+    plt.scatter(xs, ys)
+    plt.plot(xs, ys)
+    plt.grid(b='on')
+    plt.show()
+
+
+def term_to_year(term):
+    """
+    :param term: a tuple of (year, term_id).
+    """
+    return term[0] if term[1] == 9 else term[0] - 1
+
+
+def term_str(term):
+    year = term[0]
+    if term[1] == 1: t = 'Spring'
+    elif term[1] == 6: t = 'Summer'
+    elif term[1] == 9: t = 'Fall'
+    return '%s, %d' % (t, year)
 
 
 def load_course_info(csv_file):
@@ -28,15 +54,20 @@ def load_course_info(csv_file):
         r = row[0]
         term = (2000 + int((int(r) - 5000) / 10), int(r[-1]))
 
-        return {'term': term,
-                'subject': row[3].strip(),
-                'catalog': row[4].strip(),
-                'section': row[5].strip(),
-                'title': row[6].strip(),
-                'min_hours': int(row[8]),
-                'max_hours': int(row[9]),
-                'enrollment': int(row[11]),
-                'instructor': row[12].strip()}
+        # name = lastname,firstname
+        r = row[12].split(',')
+        instructor = (r[0].strip(), r[1].strip())
+
+        return SimpleNamespace(
+            term=term,
+            subject=row[3].strip(),
+            catalog=row[4].strip(),
+            section=row[5].strip(),
+            title=row[6].strip(),
+            min_hours=int(row[8]),
+            max_hours=int(row[9]),
+            enrollment=int(row[11]),
+            instructor=instructor)
 
     with open(csv_file) as fin:
         reader = csv.reader(fin)
@@ -45,6 +76,60 @@ def load_course_info(csv_file):
     return course_info
 
 
+def enrollment_by_term(course_info):
+    enroll = {}
+    for c in course_info:
+        term = c.term
 
-course_info = load_course_info(csv_file)
-for l in course_info: print(l)
+    return enroll
+
+
+def enrollment_by_academic_year(course_info, regular=True, research=True, undergraduate=True, graduate=True):
+    enroll = {}
+    for c in course_info:
+        catalog = c.catalog
+
+        # research courses include 'R' in the catalog, except for '130R'
+        if catalog != '130R' and 'R' in catalog:
+            if not research: continue
+        elif not regular:
+            continue
+
+        # undergraduate courses are < 500
+        if int(catalog[0]) < 5:
+            if not undergraduate: continue
+        elif not graduate:
+            continue
+
+        year = term_to_year(c.term)
+        enroll[year] = enroll.get(year, 0) + c.enrollment
+
+    return enroll
+
+
+def instructor_by_term(course_info):
+    inst = {}
+    for c in course_info:
+        if c.term in inst:
+            inst[c.term].add(c.instructor)
+        else:
+            inst[c.term] = {c.instructor}
+
+    return inst
+
+
+
+
+
+if __name__ == '__main__':
+    csv_file = '../dat/cs_courses_2008_2018.csv'
+    course_info = load_course_info(csv_file)
+    d = enrollment_by_term(course_info)
+    d = enrollment_by_academic_year(course_info)
+    d = instructor_by_term(course_info)
+
+
+
+
+
+
