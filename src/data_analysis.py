@@ -14,6 +14,10 @@
 # limitations under the License.
 # ========================================================================
 import csv
+from collections import Counter
+
+import math
+from fuzzywuzzy import fuzz
 from types import SimpleNamespace
 
 import matplotlib.pyplot as plt
@@ -36,12 +40,17 @@ def term_to_year(term):
     return term[0] if term[1] == 9 else term[0] - 1
 
 
-def term_str(term):
+def term_to_str(term):
     year = term[0]
     if term[1] == 1: t = 'Spring'
     elif term[1] == 6: t = 'Summer'
     elif term[1] == 9: t = 'Fall'
-    return '%s, %d' % (t, year)
+    else: t = ''
+    return t, year
+
+
+def is_research_course(catalog):
+    return catalog != '130R' and 'R' in catalog
 
 
 def load_course_info(csv_file):
@@ -118,15 +127,109 @@ def instructor_by_term(course_info):
     return inst
 
 
+def course_by_instructor(course_info, lastname, include_research=False):
+    """
+    :param course_info:
+    :param lastname: the last name of the professor.
+    :param include_research: if True, include research courses; otherwise, exclude them.
+    :return: a dictionary where the key is the course number and
+             the value is the number of terms that the professor `lastname` taught that course.
+    """
+    def match(c):
+        return c.instructor[0] == lastname and \
+               (include_research or not is_research_course(c.catalog))
+
+    courses = {(*c.term, c.subject, c.catalog) for c in course_info if match(c)}
+    return Counter([t[2:] for t in courses])
 
 
+def courses_by_instructors(course_info, include_research=False):
+    d = {}
+    for c in course_info:
+        if include_research or not is_research_course(c.catalog):
+            key = c.instructor
+            val = (*c.term, c.subject, c.catalog)
+            if key in d: d[key].add(val)
+            else: d[key] = {val}
 
-if __name__ == '__main__':
+    return {k: Counter([t[2:] for t in v]) for k, v in d.items()}
+
+
+def professor_frequency(inst_course_dict):
+    """
+    :param inst_course_dict: the output of courses_by_instructors.
+    :return: the counter where the key is (subject, catalog) and the value is its frequency count with respect to professors.
+    """
+    return Counter([k for v in inst_course_dict.values() for k in v.keys()])
+
+
+def when_did_prof_x_start_teaching_cs_at_emory(course_info, lastname=None, firstname=None, threshold=75):
+    """
+    :param course_info:
+    :param lastname: the last name of the professor.
+    :param firstname: the first name of the professor.
+    :param threshold:
+    :return: if both lastname and firstname are None, the list of all instructors with their first terms.
+             if only lastname is provided, the list of all instructors with the last name with their first terms.
+             if only firstname is provided, the list of all instructors with the first name with their first terms.
+    """
+    def match(instructor):
+        l = not lastname or fuzz.ratio(lastname.lower(), instructor[0].lower()) >= threshold
+        f = not firstname or fuzz.ratio(firstname.lower(), instructor[1].lower()) >= threshold
+        return l and f
+
+    # both lastname and firstname are provided
+    if lastname and firstname:
+        n = next((c for c in course_info if match(c.instructor)), None)
+        return [(*n.instructor, *term_to_str(n.term))] if n else []
+
+    # only lastname or firstname is provided
+    inst = {}
+
+    for c in course_info:
+        key = c.instructor
+        if match(key) and key not in inst:
+            inst[key] = term_to_str(c.term)
+
+    return [(*k, *v) for k, v in inst.items()]
+
+
+def what_is_prof_x_special_courses(course_info, lastname):
+    """
+    :param course_info: the output of load_course_info.
+    :param lastname: the last name of the professor.
+    :return: a dictionary where the key is (subject, catalog) and value is its TF-IDF score.
+    """
+    inst_course_dict = courses_by_instructors(course_info)
+    prof_freq = professor_frequency(inst_course_dict)
+    prof_courses = course_by_instructor(course_info, lastname)  # this is inefficient
+    N = len(prof_freq)
+
+    for k, v in prof_courses.items():
+        prof_courses[k] *= math.log(N / prof_freq[k])
+
+    return prof_courses
+
+
+def main():
     csv_file = '../dat/cs_courses_2008_2018.csv'
     course_info = load_course_info(csv_file)
     d = enrollment_by_term(course_info)
     d = enrollment_by_academic_year(course_info)
     d = instructor_by_term(course_info)
+
+    lastname = 'Choi'
+    insts = when_did_prof_x_start_teaching_cs_at_emory(course_info, lastname=lastname)
+    for inst in insts: print(inst)
+
+    firstname = 'Shun Yang'
+    insts = when_did_prof_x_start_teaching_cs_at_emory(course_info, firstname=firstname)
+    for inst in insts: print(inst)
+
+    print(course_by_instructor(course_info, 'Choi'))
+
+if __name__ == '__main__':
+    main()
 
 
 
