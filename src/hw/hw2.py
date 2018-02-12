@@ -34,6 +34,15 @@ def special_topics(course_info):
     pass
 
 
+def similarity(course_info):
+    """
+    :param course_info: the output of load_course_info().
+    :return: whose key is a professor name (last name, First name) and the value is a list of pairs where each pair
+            represents (another professor name, similarity score between the key professor and another professor).
+    """
+    pass
+
+
 def vector_plot(course_info):
     pass
 
