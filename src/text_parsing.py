@@ -42,18 +42,7 @@ for t in schedule.find_all('div', {'class': 'schedules'}):
 
 
 #
-# def read_bibs(dirpath):
-#     filenames = glob.glob(os.path.join(dirpath, '*.bib'))
-#     entries = []
-#
-#     for filename in filenames:
-#         fin = open(filename)
-#         bib = bibtexparser.loads(fin.read())
-#         ent = [entry for entry in bib.entries if 'author' in entry]
-#         entries.extend(ent)
-#
-#     print('Read: %s (%d files, %d entries)' % (dirpath, len(filenames), len(entries)))
-#     return entries
+
 #
 #
 #
