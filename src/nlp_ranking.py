@@ -17,6 +17,7 @@ import os
 import re
 import glob
 import codecs
+from contextlib import suppress
 from types import SimpleNamespace
 
 import bibtexparser
@@ -33,7 +34,7 @@ __author__ = 'Jinho D. Choi'
 def load_map(map_file):
     """
     :param map_file: ../dat/aclbib_map.tsv
-    :return: a dictionary where the key is the conference/journal ID and the value is a namespace of (weight, title).
+    :return: a dictionary where the key is the conference/journal ID and the value is a namespace of (weight, series).
     """
     fin = open(map_file)
     d = {}
@@ -42,7 +43,7 @@ def load_map(map_file):
         l = line.split('\t')
         if l:
             key = l[0]
-            d[key] = SimpleNamespace(weight=float(l[1]), title=l[2])
+            d[key] = SimpleNamespace(weight=float(l[1]), series=l[2])
 
     return d
 
@@ -184,11 +185,12 @@ def collect_bibs(rank_dir):
 
 # =================================== BIB Processing ===================================
 
-def load_bibs(bib_map, bib_dir):
+def get_entry_dict(bib_map, bib_dir):
     """
     Populate `bib_map` with the list of bib entries.
     :param bib_map: the output of load_map().
     :param bib_dir: the input directory where the bib files are stored.
+    :return: a dictionary where the key is the publication ID (e.g., 'P17-1000') and the value is its bib entry.
     """
     re_pages = re.compile('(\d+)-{1,2}(\d+)')
 
@@ -198,9 +200,11 @@ def load_bibs(bib_map, bib_dir):
             if len(n) == 2: return n[1].strip() + ' ' + n[0].strip()
         return name
 
-    def get(entry):
+    def get(entry, weight, series):
         entry['author'] = [parse_name(name) for name in entry['author'].split(' and ')]
-        return entry
+        entry['weight'] = weight
+        entry['series'] = series
+        return entry['ID'], entry
 
     def valid(entry, weight):
         if weight == 1.0:
@@ -211,64 +215,151 @@ def load_bibs(bib_map, bib_dir):
 
         return 'author' in entry
 
+    bibs = {}
     for k, v in bib_map.items():
         fin = open(os.path.join(bib_dir, k+'.bib'))
         bib = bibtexparser.loads(fin.read())
-        v.entries = [get(entry) for entry in bib.entries if valid(entry, v.weight)]
-        # print('%10s: %5d' % (k, len(v.entries)))
+        bibs.update([get(entry, v.weight, v.series) for entry in bib.entries if valid(entry, v.weight)])
+
+    return bibs
 
 
-def extract_emails(txt_dir):
+def get_email_dict(txt_dir):
     """
     :param txt_dir: the input directory containing all text files.
     :return: a dictionary where the key is the publication ID and the value is the list of authors' email addresses.
     """
-    for text_file in glob.glob(os.path.join(txt_dir, '*.txt')):
+    def chunk(text_file, page_limit=2000):
         fin = codecs.open(text_file, encoding='utf-8')
-        abstract = False
+        doc = []
+        n = 0
 
         for line in fin:
             line = line.strip().lower()
-            if line == 'abstract':
-                abstract = True
-                break
-            elif line == 'introduction':
-                abstract = True
-                break
+            if line:
+                doc.append(line)
+                n += len(line)
+                if n > page_limit: break
 
-        if not abstract:
-            print(text_file)
+        return ' '.join(doc)
+
+    re_email = re.compile('[({\[]?\s*([a-z0-9\.\-_]+(?:\s*[,;|]\s*[a-z0-9\.\-_]+)*)\s*[\]})]?\s*@\s*([a-z0-9\.\-_]+\.[a-z]{2,})')
+    email_dict = {}
+
+    for txt_file in glob.glob(os.path.join(txt_dir, 'P16-1172.txt')):
+        # print(txt_file)
+        try: doc = chunk(txt_file)
+        except UnicodeDecodeError: continue
+        emails = []
+        print(doc)
+
+        for m in re_email.findall(doc):
+            ids = m[0].replace(';', ',').replace('|', ',')
+            domain = m[1]
+
+            if ',' in ids:
+                emails.extend([ID.strip()+'@'+domain for ID in ids.split(',') if ID.strip()])
+            else:
+                emails.append(ids+'@'+domain)
+
+        if emails:
+            key = os.path.basename(txt_file)[:-4]
+            email_dict[key] = emails
+
+    return email_dict
+
+
+def print_emails(entry_dict, email_dict, email_file):
+    """
+    :param entry_dict: the output of get_entry_dict().
+    :param email_dict: the output of get_email_dict().
+    :param email_file: the output file in the TSV format, where each column contains
+                       (publication ID, the total number of authors, list of email addresses) for each paper.
+    """
+    fout = open(email_file, 'w')
+
+    for k, v in sorted(entry_dict.items()):
+        n = len(v['author'])
+        l = [k, str(n)]
+        if k in email_dict: l.extend(email_dict[k][:n])
+        if n + 2 != len(l): print(k)
+        fout.write('\t'.join(l) + '\n')
+
+    fout.close()
+
+
+def load_emails(email_file):
+    fin = open(email_file)
+    d = {}
+
+    for line in fin:
+        l = line.split('\t')
+        d[l[0]] = SimpleNamespace(num_authors=int(l[1]), emails=l[2:])
+
+    fin.close()
+    return d
+
+
+def load_institutes(institute_file):
+    fin = open(institute_file)
+    d = {}
+
+    for line in fin:
+        l = line.split('\t')
+        d[l[1]] = SimpleNamespace(name=l[0], city=l[2], state=l[3])
+
+    fin.close()
+    return d
+
+
+def match_institutes(email_dict, institute_dict):
+    """
+    :param email_dict:
+    :return:
+    """
+    for ID, v in email_dict.item():
+        for email in v.emails:
+            idx = email.rfind('@')
+            domain = email[idx+1:]
+            if domain.endswith('edu') and domain not in institute_dict:
+                print(domain)
+
+
 
 
 
 # =================================== Exercises ===================================
 
-def publications_per_author(bib_map):
+def publications_per_author(entry_dict):
     """
-    :param bib_map: the output of load_map().
+    :param entry_dict: the output of get_entry_dict().
     :return: a dictionary where the key is an author name and the value is a list of author's publications.
     """
     d = {}
 
-    for k, v in bib_map.items():
-        for entry in v.entries:
-            for author in entry.author:
-                e = (entry['title'], entry['year'], v.weight)
-                d.setdefault(author, []).append(e)
+    for k, v in entry_dict.items():
+        author_list = v['author']
+        for author in author_list:
+            e = (v['title'], v['year'], v['weight'], len(author_list))
+            d.setdefault(author, []).append(e)
 
     return d
 
 
-def rank_authors_by_publications(author_pub, weighted=True):
+def rank_authors_by_publications(author_pub, weighted=True, equal_contribution=True):
     """
     :param author_pub: the output of publications_per_author()
     :param weighted: if True, rank the authors by weighted publication scores; otherwise, by publication counts.
+    :param equal_contribution: if True, the contribution of each paper is equally divided by the # of authors.
     :return: the ranked list of authors with their publication scores in descending order.
     """
-    def count(pubs):
-        return sum(pub[2] for pub in pubs) if weighted else len(pubs)   # pub[2]: weight
+    def score(pubs):
+        if equal_contribution:
+            return sum(pub[2]/pub[3] for pub in pubs) if weighted else sum(1/pub[3] for pub in pubs)
+        else:
+            return sum(pub[2] for pub in pubs) if weighted else len(pubs)   # pub[2]: weight
 
-    return sorted([(k, count(v)) for k, v in author_pub.items()], key=lambda x: x[1], reverse=True)
+    return sorted([(k, score(v)) for k, v in author_pub.items()], key=lambda x: x[1], reverse=True)
 
 
 def plot_scores_by_year(author_pub, name, weighted=True):
@@ -299,17 +390,20 @@ def plot_scores_by_year(author_pub, name, weighted=True):
 
 
 if __name__ == '__main__':
-    collect_bibs('/Users/jdchoi/Git/nlp-ranking')
+    # collect_bibs('/Users/jdchoi/Git/nlp-ranking')
 
 
     MAP_FILE = '/Users/jdchoi/Git/nlp-ranking/dat/bib_map.tsv'
     BIB_DIR = '/Users/jdchoi/Git/nlp-ranking/bib/'
     TXT_DIR = '/Users/jdchoi/Git/nlp-ranking/txt/'
+    EMAIL_FILE = '/Users/jdchoi/Git/nlp-ranking/dat/email_map.tsv'
+    INSTITUTE_FILE = '/Users/jdchoi/Git/nlp-ranking/dat/us_universities.tsv'
 
-    # acl_map = load_map(MAP_FILE)
-    # load_bibs(acl_map, BIB_DIR)
+    # bib_map = load_map(MAP_FILE)
+    # entry_dict = get_entry_dict(bib_map, BIB_DIR)
+    # email_dict = get_email_dict(TXT_DIR)
+    # print_emails(entry_dict, email_dict, EMAIL_FILE)
 
-    # extract_emails(TXT_DIR)
 
 
     # extract_paper_urls(acl_map, '/Users/jdchoi/Git/nlp-ranking/txt', '/Users/jdchoi/Git/nlp-ranking/wget.sh')
