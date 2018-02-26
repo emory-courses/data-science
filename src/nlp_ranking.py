@@ -33,7 +33,7 @@ __author__ = 'Jinho D. Choi'
 
 def load_map(map_file):
     """
-    :param map_file: ../dat/aclbib_map.tsv
+    :param map_file: dat/bib_map.tsv
     :return: a dictionary where the key is the conference/journal ID and the value is a namespace of (weight, series).
     """
     fin = open(map_file)
@@ -246,12 +246,11 @@ def get_email_dict(txt_dir):
     re_email = re.compile('[({\[]?\s*([a-z0-9\.\-_]+(?:\s*[,;|]\s*[a-z0-9\.\-_]+)*)\s*[\]})]?\s*@\s*([a-z0-9\.\-_]+\.[a-z]{2,})')
     email_dict = {}
 
-    for txt_file in glob.glob(os.path.join(txt_dir, 'P16-1172.txt')):
+    for txt_file in glob.glob(os.path.join(txt_dir, '*.txt')):
         # print(txt_file)
         try: doc = chunk(txt_file)
         except UnicodeDecodeError: continue
         emails = []
-        print(doc)
 
         for m in re_email.findall(doc):
             ids = m[0].replace(';', ',').replace('|', ',')
@@ -325,6 +324,25 @@ def match_institutes(email_dict, institute_dict):
                 print(domain)
 
 
+# =================================== Email ===================================
+
+
+def generate_email_map(bib_map_file, bib_dir, txt_dir, email_map_file):
+    bib_map = load_map(bib_map_file)
+    entry_dict = get_entry_dict(bib_map, bib_dir)
+    email_dict = get_email_dict(txt_dir)
+    fout = open(email_map_file, 'w')
+    fout.write('\t'.join(['ID', 'Author Count', 'Emails', 'Count by Institute']))
+
+    for ID, v in sorted(entry_dict.items()):
+        n = len(v['author'])
+        l = [ID, str(n)]
+        e = ','.join(email_dict[ID][:n]) if ID in email_dict else '_'
+
+
+        if ID in email_dict: l.extend(email_dict[ID][:n])
+        if n + 2 != len(l): print(k)
+        fout.write('\t'.join(l) + '\n')
 
 
 
