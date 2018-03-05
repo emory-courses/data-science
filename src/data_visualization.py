@@ -24,7 +24,7 @@ def load_institutes(institute_file):
 
     for line in fin:
         l = list(map(str.strip, line.split('\t')))
-        d[l[1]] = SimpleNamespace(name=l[0], url=l[1], city=l[2], state=l[3])
+        d[l[1]] = SimpleNamespace(name=l[0], url=l[1], city=l[2], state=l[3], score=0.0)
 
     fin.close()
     return d
@@ -51,13 +51,17 @@ def load_scores(email_file):
     return d
 
 
-def measure_scores(inst_map, score_map):
+def measure_scores(inst_map, score_map, start_year, end_year):
     """
     :param inst_map: the output of load_institutes().
     :param score_map: the output of load_scores().
+    :param start_year: staring year of the publications.
+    :param end_year: ending year of the publications.
     :return: a list of institute namespaces where the score field contains the total score of that institute from their publications.
     """
     for pub_id, v in score_map.items():
+        if not (start_year <= int(pub_id[1:3]) + 2000 <= end_year): continue
+
         for domain, score in v:
             d = domain.split('.')
             for i in range(len(d)-2, -1, -1):
@@ -82,6 +86,17 @@ def measure_state_scores(inst_scores):
     return states
 
 
+def measure_inst_scores_by_state(inst_scores, state):
+    insts = {}
+
+    for inst in inst_scores:
+        if state == inst.state:
+            insts[inst.name] = insts.get(inst.name, 0) + inst.score
+
+    return insts
+
+
+
 
 if __name__ == '__main__':
     EMAIL_FILE = '/Users/jdchoi/Git/nlp-ranking/dat/email_map.tsv'
@@ -92,9 +107,13 @@ if __name__ == '__main__':
     inst_map = load_institutes(INSTITUTE_FILE)
     print(len(inst_map))
 
-    inst_scores = measure_scores(inst_map, score_map)
+    inst_scores = measure_scores(inst_map, score_map, 2014, 2017)
     print(len(inst_scores))
 
-    state_scores = measure_state_scores(inst_scores)
-    for k, v in sorted(state_scores.items()):
+    # state_scores = measure_state_scores(inst_scores)
+    # for k, v in sorted(state_scores.items()):
+    #     print("['%s', %f]," % (k, v))
+
+    scores = measure_inst_scores_by_state(inst_scores, 'GA')
+    for k, v in sorted(scores.items(), key=lambda t: float(t[1]), reverse=True):
         print("['%s', %f]," % (k, v))
