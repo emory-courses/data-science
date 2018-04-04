@@ -87,6 +87,12 @@ def measure_state_scores(inst_scores):
 
 
 def measure_inst_scores_by_state(inst_scores, state):
+    """
+    :param inst_scores: the output of measure_scores().
+    :param state: the state ID (e.g., GA).
+    :return: a dictionary where the key is the institute name and the value is the total score of that institute.
+    """
+
     insts = {}
 
     for inst in inst_scores:
