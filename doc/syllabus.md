@@ -18,7 +18,7 @@ Syllabus
 ## Grading
 
 * 4 homework assignments: 40%
-* 7 take-home quizzes: 20%
+* 8 take-home quizzes: 20%
 * Project proposal: 15%
 * Final project: 25%
 * Homework assignments and quizzes must be submitted individually. Group discussions are allowed; however, your work must be original.
@@ -28,9 +28,10 @@ Syllabus
 
 ## Homework Assignments
 
-* Homework assignments require the following skills (that are not covered by this course):
+* Homework assignments require the following skills:
   * Python programming
   * Git version control
+  * Latex writing
 * All assignments are due by the beginning of the class.
 * Late submissions within a week will be accepted with the grading penalty of 15%, and will not be accepted after the first week. Exceptions to this policy will be made only in extraordinary circumstances.
 
