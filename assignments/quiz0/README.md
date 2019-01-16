@@ -70,4 +70,4 @@ Getting Started
 * From PyCharm, add the `quiz0` package to git, commit, and push your changes to Github.
 * Make sure you DO NOT add the `env` directory to git.
 * Check if the `quiz0` package is correctly pushed to Github.
-* Submit the address of your `qtm385` repository (e.g., `https://github.com/your_id/qtm385.git`): https://canvas.emory.edu/courses/57068/assignments/201526
+* Submit the address of your `qtm385` repository (e.g., https://github.com/your_id/qtm385.git): https://canvas.emory.edu/courses/57068/assignments/201526
