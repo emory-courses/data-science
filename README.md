@@ -8,5 +8,5 @@ Introductory courses on computer programming and probabilities & statistics are 
 All exercises as well as homework assignments assume Python programming.
 Students are expected to present their work on the final project in groups towards the end of the term.
 
-* [Syllabus](../../wiki/Syllabus)
-* [Schedule](../../wiki/Schedule)
+* [Syllabus](doc/syllabus.md)
+* [Schedule](doc/schedule.md)
