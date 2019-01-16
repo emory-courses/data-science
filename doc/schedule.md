@@ -3,7 +3,7 @@ Schedule
 
 | Date | Topic | Assignments | Presenters |
 |:-:|:-:|:-:|---|
-|01/16| [Introduction](syllabus.md) | [hw0](../homework/hw0) | |
+|01/16| [Introduction](syllabus.md) | [quiz0](../assignments/quiz0) | |
 |01/21| Martin Luther King Day | | |
 |01/23| [Data Aggregation]() | [quiz1]() |
 |01/28| [Data Aggregation]() | | |

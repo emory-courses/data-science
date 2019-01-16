@@ -1,4 +1,4 @@
-Homework 0: Getting Started
+Getting Started
 =====
 
 ## Python
@@ -14,9 +14,10 @@ Homework 0: Getting Started
 * From the `Settings` menu, add the TA as collaborators of this repository.
   * Han He: `hankcs`
 * Clone the repository on your local machine:
-  ```bash
+  ```
   $ git clone https://github.com/your_id/qtm385.git
   ```
+* Copy [`.gitignore`](.gitignore) and paste under the `qtm385` directory.
 
 
 ## PyCharm
@@ -24,7 +25,7 @@ Homework 0: Getting Started
 * Install [PyCharm](https://www.jetbrains.com/pycharm/download/). You can get the professional version by applying for the [academic license](https://www.jetbrains.com/student/).
 * Lauch PyCharm and create a new project:
    * Select `Pure Python` on the left pane.
-   * Choose the `qtm385` directory you just created.
+   * Choose the `qtm385` directory you just cloned.
    * Choose an interpreter that is `3.6.x` or above.
    * Click the gear button on the righthand side and select `Create VirtualEnv`. Give `env` as name and choose the `qtm385/env` directory as location.
    * Click the `Create` button at the bottom.
@@ -32,20 +33,11 @@ Homework 0: Getting Started
   * Open the `Preferences` pane from the menu and search for `Project Interpreter`.
   * Click the `+` sign at the bottom of the `Project Interpreter` pane.
   * Search for `requests` and click the `Install Package` button.
-* Create a python package called `src/hw0`.
-* Create the python file [`hw0.py`](src/hw0.py) under the `hw0` package and paste the following code:
-   ```python
-   import requests
-
-   r = requests.get('http://www.cs.emory.edu/~choi')
-   print(r)
-   ```
+* Create a python package called `src/quiz0`.
+* Copy [`quiz0.py`](src/quiz0.py) under the `quiz0` package.
 * Run the program by clicking `[Run -> Run]`.
-* If you see the following output on the console, your program runs successfully.
+* If `quiz0.html` is created under the `quiz0` package, your program runs successfully.
 
-   ```
-   <Response [200]>
-   ```
 
 ## Jupyter Notebook
 
@@ -53,8 +45,8 @@ Homework 0: Getting Started
 * On a terminal, go to the `qtm385` directory.
 * Enter the following command to activate the virtualenv:
 
-   ```bash
-   $ env/bin/activate
+   ```
+   $ source env/bin/activate
    ```
 
 * Enter the following command to launch Jupyter Notebook:
@@ -63,17 +55,19 @@ Homework 0: Getting Started
    (env) $ jupyter notebook
    ```
 
-* On the web-browser where it is launched, create a new notebook and followed the steps in [getting_started.ipyn](../blob/master/doc/getting_started.ipynb).
+* On the web-browser where it is launched, choose the `src/quiz0` directory.
+* Create a new notebook called `quiz0` and run the following code:
+  ```python
+  import requests
+  r = requests.get('http://www.cs.emory.edu/~choi')
+  print(r)
+   ```
+* If you see `<Response [200]>`, your notebook runs successfully.
+
 
 ## Submission
 
-* Run the following code:
-   ```python
-   import requests
-
-   r = requests.get('http://www.mathcs.emory.edu/~choi')
-   print(r.text)
-   ```
-* Save the output to `hw0.html`.
-* Submit `hw0.html` to https://canvas.emory.edu/courses/41979/assignments/105880
-
+* From PyCharm, add the `quiz0` package to git, commit, and push your changes to Github.
+* Make sure you DO NOT add the `env` directory to git.
+* Check if the `quiz0` package is correctly pushed to Github.
+* Submit the address of your `qtm385` repository: 
