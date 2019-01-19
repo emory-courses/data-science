@@ -28,8 +28,8 @@ Getting Started
   * Search and install the `.ignore` plugin.
 * Setup the interpreter:
   * Go to `[Preferences - Project: qtm385 - Project Interpreter]`.
-  * Click the gear button on the righthand side and select `Create VirtualEnv`.
-  * Enter `env` as the name, specify the `qtm385/env` directory as the location, and choose `Python 3.6.x` as the base interpreter.
+  * Click the gear button on the righthand side, then click `Add...`. In the prompted window select `Virtualenv Environment`.
+  * Change the default `venv` to `env` directory as the location, and choose `Python 3.6.x` as the base interpreter.
 * Install a package:
   * Go to `[Preferences - Project: qtm385 - Project Interpreter]`.
   * Click the `+` sign at the bottom.
