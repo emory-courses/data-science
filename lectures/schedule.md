@@ -5,9 +5,9 @@ Schedule
 |:-:|:-:|:-:|---|
 |01/16| [Introduction](syllabus.md) | [quiz0](../assignments/quiz0) | |
 |01/21| Martin Luther King Day | | |
-|01/23| [Data Aggregation]() | [quiz1]() |
-|01/28| [Data Aggregation]() | | |
-|01/30| [Data Aggregation]() | [hw1](../homework/hw1) | |
+|01/23| [Data Aggregation](data_aggregation) | [quiz1]() |
+|01/28| [Data Aggregation](data_aggregation) | | |
+|01/30| [Data Aggregation](data_aggregation) | [hw1](../homework/hw1) | |
 |02/04| [Data Analysis]() | [quiz2]() | |
 |02/06| [Data Analysis]() | | |
 |02/11| [Data Analysis]() | [hw2](../homework/hw2) | |
