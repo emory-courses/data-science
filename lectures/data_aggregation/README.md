@@ -5,24 +5,22 @@ Data Aggregation
 
 * [Jupyter notebook](data_aggregation.ipynb)
 
-## Supplementary
-
-### HTTP Request
+## HTTP Request
 
 * [Python API](http://docs.python-requests.org)
 * [Session objects](http://docs.python-requests.org/en/latest/user/advanced/#session-objects)
 
-### HTML Parsing
+## HTML Parsing
 
 * [Beautiful Soup](https://beautiful-soup-4.readthedocs.io)
 
-### Regular Expressions
+## Regular Expressions
 
 * [Python API](https://docs.python.org/3.6/library/re.html)
 * [Tutorial](http://www.regular-expressions.info)
 * [Interface](https://regex101.com)
 
-### JSON
+## JSON
 
 * [Python API](https://docs.python.org/3.6/library/json.html)
 * [Viewer](http://jsonviewer.stack.hu)
