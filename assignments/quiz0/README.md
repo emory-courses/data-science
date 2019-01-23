@@ -35,7 +35,7 @@ Getting Started
 * Create a new package:
   * At any step, if it prompts you to add a new file/package to git, click `Add`.
   * Create a python package called `quiz0`.
-  * Create a python file called [`quiz0.py`](src/quiz0.py) under the `quiz0` package and copy the content. 
+  * Create a python file called [`quiz0.py`](quiz0.py) under the `quiz0` package and copy the content. 
   * Run `quiz0` by clicking `[Run -> Run]`.
   * If `quiz0.html` is created under the `quiz0` package, your program runs successfully.
 
