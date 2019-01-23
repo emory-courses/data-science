@@ -1,7 +1,3 @@
-
-
-
-
 def extract_exam_schedule(url) -> Dict[int, Tuple[str, str, str]]:
     r = requests.get(url)
     html = BeautifulSoup(r.text, 'html.parser')
