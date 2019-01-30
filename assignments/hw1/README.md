@@ -9,8 +9,10 @@ Data Aggregation
 
 ## Task 1
 
-* Update the `generate_html_files` function to generate one HTML file per program (e.g., QTM) under the `html/` directory that displays the exam and class information together for that program:
-  * Once the HTML files are generated, all links in [`index.html`](html/index.html) should be active.
+* Update the [`generate_html_files`](https://github.com/emory-courses/data-science/blob/master/assignments/hw1/hw1.py#L4) function to generate one HTML file per program (e.g., QTM) under the `html/` directory that displays the exam and class information together for that program:
+  * Parse [exam](http://registrar.emory.edu/faculty-staff/exam-schedule/spring-2019.html) and [class](http://atlas.college.emory.edu/class-schedules/spring-2019.php) page. Try to match exams with classes based on the class meeting time on exam page.
+  * Save each class with its schedule and exam information in a html file, e.g., `qtm.html` for this course. As you'll need to parse this html file again in task 2, please design a clear format to seperate each piece of information. 
+  * Once the HTML files are generated, all links in [`index.html`](html/index.html) should be active. You can open  [`index.html`](html/index.html) in your browser to check whether those links are active or dead.
   * Feel free to use any contents in [`data_aggregation.ipynb`](../../course/data_aggregation/data_aggregation.ipynb).
 
 ## Task 2
