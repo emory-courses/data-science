@@ -28,6 +28,6 @@ Data Aggregation
   * Do not modify `__main__`; we will use this to test your program.
 * Add the `hw1` package to git:
   * `hw1/hw1.py`
-  * `hw/html/*.html`
+  * `hw1/html/*.html`
 * Commit and push your changes to Github.
 * Canvas: https://canvas.emory.edu/courses/57068/assignments/206291
