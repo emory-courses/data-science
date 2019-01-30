@@ -15,27 +15,19 @@ Data Aggregation
 
 ## Task 2
 
-* Update the `print_exam_schedule` function that takes a course ID and prints the exam schedule of that course:
-  * The format of a course ID: `<program><number>-<section>` (e.g., `QTM385-1`).
-  * The output format: `(<day>, <date>, <time>)` (e.g., ``).
-
-  
-  Add or create all necessary contents (e.g., packages, constants, functions) to run `quiz1.py` that replicates the results from the class.
-
-
-Complete the 
-
-Currently, `extract_exam_schedule` and `extract_class_schedule` function do not normalize the class meeting time into military time correctly for afternoon classes.  Update the functions such that it shows correct military time for afternoon classes.
-
-* Add all necessary contents (e.g., packages, constants, functions) to run `quiz1.py` that replicates the results from the class.
-* Update the `extract_exam_schedule` function to properly normalize the meeting times for afternoon classes.
-* Save the printed output to `quiz1/quiz1.txt`.
+* Update the `print_exam_schedule` function that takes a list of course IDs and prints the exam schedules of those courses:
+  * The format of each course ID: `<program><number>-<section>` (e.g., `QTM385-1`).
+  * The output format: `(<day>, <date>, <time>)` (e.g., `('Thursday', '2-May', '3:00 P.M - 5:30 P.M')
+`).
+* Feel free to use any contents in [`data_aggregation.ipynb`](../../course/data_aggregation/data_aggregation.ipynb).
 
 
 ## Submission
 
-* Add the `quiz1` package to git:
-  * `quiz1/quiz1.py`
-  * `quiz1/quiz1.txt`
+* Make sure that your `hw1.py` runs as expected before submitting.
+  * Do not modify `__main__`; we will use this to test your program.
+* Add the `hw1` package to git:
+  * `hw1/hw1.py`
+  * `hw/html/*.html`
 * Commit and push your changes to Github.
-* Canvas: https://canvas.emory.edu/courses/57068/assignments/204706
+* Canvas: https://canvas.emory.edu/courses/57068/assignments/206291
