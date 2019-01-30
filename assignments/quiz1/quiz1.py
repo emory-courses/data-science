@@ -1,4 +1,5 @@
-def extract_exam_schedule(url) -> Dict[int, Tuple[str, str, str]]:
+
+def extract_exam_schedule(url) -> Dict[Tuple[int, int], Tuple[str, str, str]]:
     r = requests.get(url)
     html = BeautifulSoup(r.text, 'html.parser')
     tbody = html.find('tbody')
@@ -6,10 +7,11 @@ def extract_exam_schedule(url) -> Dict[int, Tuple[str, str, str]]:
 
     for tr in tbody.find_all('tr'):
         tds = tr.find_all('td')
+        class_time = tds[0].string.strip()
         m = TIME_DAYS.match(class_time)
         if m:
             time = norm_time(int(m.group(1)), int(m.group(2)))
-            days = m.group(3)
+            days = norm_days(m.group(3))
             key  = (time, days)
             exam_day  = tds[1].string.strip()
             exam_date = tds[2].string.strip()

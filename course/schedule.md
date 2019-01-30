@@ -5,11 +5,11 @@ Schedule
 |:-:|:-:|:-:|---|
 |01/16| [Introduction](syllabus.md) | [quiz0](../assignments/quiz0) | |
 |01/21| Martin Luther King Day | | |
-|01/23| [Data Aggregation](data_aggregation) | [quiz1](../assignments/quiz1) |
-|01/28| [Data Aggregation](data_aggregation) | | |
-|01/30| [Data Aggregation](data_aggregation) | [hw1](../homework/hw1) | |
+|01/23| [Data Aggregation](data_aggregation) | |
+|01/28| [Data Aggregation](data_aggregation) | [quiz1](../assignments/quiz1) | |
+|01/30| [Data Aggregation](data_aggregation) | [hw1](../assignments/hw1) | |
 |02/04| [Data Analysis]() | [quiz2](../assignments/quiz2) | |
-|02/06| [Data Analysis]() | | |
+|02/06| [Data Analysis]() |  | |
 |02/11| [Data Analysis]() | [hw2](../homework/hw2) | |
 |02/13| [Text Parsing]() | [quiz3](../assignments/quiz3) | |
 |02/18| [Text Parsing]() | | |
