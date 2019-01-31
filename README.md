@@ -10,3 +10,4 @@ Students are expected to present their work on the final project in groups towar
 
 * [Syllabus](course/syllabus.md)
 * [Schedule](course/schedule.md)
+* [Projects from previous years](course/final-projects.md).
