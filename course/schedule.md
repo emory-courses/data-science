@@ -8,14 +8,14 @@ Schedule
 |01/23| [Data Aggregation](data_aggregation) | |
 |01/28| [Data Aggregation](data_aggregation) | [quiz1](../assignments/quiz1) | |
 |01/30| [Data Aggregation](data_aggregation) | [hw1](../assignments/hw1) | |
-|02/04| [Data Analysis]() | [quiz2](../assignments/quiz2) | |
-|02/06| [Data Analysis]() |  | |
+|02/04| [Data Analysis]() | | |
+|02/06| [Data Analysis]() | [quiz2](../assignments/quiz2) | |
 |02/11| [Data Analysis]() | [hw2](../homework/hw2) | |
-|02/13| [Text Parsing]() | [quiz3](../assignments/quiz3) | |
-|02/18| [Text Parsing]() | | |
+|02/13| [Text Parsing]() | | |
+|02/18| [Text Parsing]() | [quiz3](../assignments/quiz3) | |
 |02/20| [Text Parsing]() | [hw3](../homework/hw3) | |
-|02/25| [Cloud Computing]() | [quiz4](../assignments/quiz4) | |
-|02/27| [Cloud Computing]() |  | |
+|02/25| [Cloud Computing]() |  | |
+|02/27| [Cloud Computing]() | [quiz4](../assignments/quiz4) | |
 |03/04| [Cloud Computing]() | [hw4](../homework/hw4) | |
 |03/06| [Data Visualization]() | | |
 |03/11| Spring Break | | |

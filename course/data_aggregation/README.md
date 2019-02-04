@@ -19,8 +19,3 @@ Data Aggregation
 * [Python API](https://docs.python.org/3.6/library/re.html)
 * [Tutorial](http://www.regular-expressions.info)
 * [Interface](https://regex101.com)
-
-## JSON
-
-* [Python API](https://docs.python.org/3.6/library/json.html)
-* [Viewer](http://jsonviewer.stack.hu)
