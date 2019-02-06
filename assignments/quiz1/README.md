@@ -18,4 +18,4 @@ Currently, the `extract_exam_schedule` function does not normalize the class mee
   * `quiz1/quiz1.py`
   * `quiz1/quiz1.txt`
 * Commit and push your changes to Github.
-* Canvas: https://canvas.emory.edu/courses/57068/assignments/204706
+* Submission: https://canvas.emory.edu/courses/57068/assignments/204706
