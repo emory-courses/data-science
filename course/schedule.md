@@ -16,8 +16,8 @@ Schedule
 |02/20| [Text Parsing]() | [quiz3](../assignments/quiz3) |
 |02/25| [Text Parsing]() |  |
 |02/27| [Text Parsing]() | [hw3](../assignments/hw3) |
-|03/04| [Cloud Computing]() | [quiz4](../assignments/quiz4) |
-|03/06| [Cloud Computing]() | |
+|03/04| [Vector Space Models](vector_space_models) | |
+|03/06| [Vector Space Models](vector_space_models) | [quiz4](../assignments/quiz4) |
 |03/11| Spring Break | |
 |03/13| Spring Break | |
 |03/18| Proposal Presentations | |
