@@ -5,7 +5,7 @@ Schedule
 |:-:|:-:|:-:|
 |01/16| [Introduction](syllabus.md) | [quiz0](../assignments/quiz0) |
 |01/21| Martin Luther King Day | |
-|01/23| [Data Aggregation](data_aggregation) |
+|01/23| [Data Aggregation](data_aggregation) ||
 |01/28| [Data Aggregation](data_aggregation) | [quiz1](../assignments/quiz1) |
 |01/30| [Data Aggregation](data_aggregation) | [hw1](../assignments/hw1) |
 |02/04| [Data Analysis](data_analysis) | |
@@ -20,9 +20,9 @@ Schedule
 |03/06| [Vector Space Models](vector_space_models) | [quiz4](../assignments/quiz4) |
 |03/11| Spring Break | |
 |03/13| Spring Break | |
-|03/18| Proposal Presentations | |
-|03/20| Proposal Presentations | |
-|03/25| Proposal Presentations | |
+|03/18| [Proposal Presentations](../assignments/proposal-presentations.md) | |
+|03/20| [Proposal Presentations](../assignments/proposal-presentations.md) | |
+|03/25| [Proposal Presentations](../assignments/proposal-presentations.md) | |
 |03/27| [YouTube Analysis]() | [quiz5](../assignments/quiz5) |
 |04/01| [YouTube Analysis]() | [hw4](../assignments/hw4) |
 |04/03| [Reddit Analysis]() | [quiz6](../assignments/quiz6) |
