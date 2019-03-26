@@ -44,4 +44,4 @@ Final Projects
   * [Abstract](https://drive.google.com/open?id=13aYgY-6Qod8ybMRxj7F9Gry3NQndSR7u), [Proposal](https://drive.google.com/open?id=1pf4IBlhvCHfBcxOqlunagVAiEVy2O53c) ([slides](https://drive.google.com/open?id=1Kigom90ED63BH9WyMdZ_GQwAGT8MYahM)), Paper (slides)
 * Emory Professors Review Scores Distribution on RateMyProfessors.com
   * Colleen Su, Derick Yang
-  * [Abstract](https://drive.google.com/open?id=1RcaOA46olr7T8MRlJq9UKNk_p3BGFwSu), Proposal (slides), Paper (slides)
+  * [Abstract](https://drive.google.com/open?id=1RcaOA46olr7T8MRlJq9UKNk_p3BGFwSu), [Proposal](https://drive.google.com/open?id=1qAGKTT6Nw2TSpYIrqPVF7ujvwaBF4Zxo) ([slides](https://drive.google.com/open?id=1d4PbZYKsZIIuVlIEgsU2YYIugUT33AFK)), Paper (slides)
