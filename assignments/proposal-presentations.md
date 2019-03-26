@@ -19,7 +19,7 @@
   * Sangkyun An, Seung Hyun Lim
 * Treasure Trove: Unlocking the Mystery Behind the Russian Trolls
   * Abdul Bingahlan, Alisha Dhanani
-* Top Tech Corporations' Core Competitiveness in Job Markets: Analysis of Employee Reviews and Working Environments
+* Top Tech Corporations' Core Competitiveness in Job Markets: Analysis of Employee Reviews and Working Environments 
   * Kemin Cao
 * Public Concerns on Fatal Disease (Tendency) from News Websites
   * Jiheng Chen, Jolina Shen
@@ -35,5 +35,5 @@
 * Can Tripadvisor Decide the Fate of a Business?
   * Jiayin Li, Ningduo Zhao
 * Clarifying the Differences between Energy Oriented Mutual Funds and Exchange Traded Funds Under Market Uncertainties
-  * Lin Qiao, Tian Xia
+  * Qiao Lin, Tian Xia
 
