@@ -23,8 +23,8 @@ Schedule
 |03/18| [Proposal Presentations](../assignments/proposal-presentations.md) | |
 |03/20| [Proposal Presentations](../assignments/proposal-presentations.md) | |
 |03/25| [Proposal Presentations](../assignments/proposal-presentations.md) | |
-|03/27| [YouTube Analysis]() | [quiz5](../assignments/quiz5) |
-|04/01| [YouTube Analysis]() | [hw4](../assignments/hw4) |
+|03/27| [Cloud Computing](cloud_computing) | [quiz5](../assignments/quiz5) |
+|04/01| [Cloud Computing](cloud_computing) | [hw4](../assignments/hw4) |
 |04/03| [Reddit Analysis]() | [quiz6](../assignments/quiz6) |
 |04/08| [Reddit Analysis]() | |
 |04/10| [Language Modeling]() | [quiz7](../assignments/quiz7) |
