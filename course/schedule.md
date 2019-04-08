@@ -24,15 +24,15 @@ Schedule
 |03/20| [Proposal Presentations](../assignments/proposal-presentations.md) | |
 |03/25| [Proposal Presentations](../assignments/proposal-presentations.md) | |
 |03/27| [Cloud Computing](cloud_computing) | [quiz5](../assignments/quiz5) |
-|04/01| [Cloud Computing](cloud_computing) | [hw4](../assignments/hw4) |
-|04/03| [Reddit Analysis]() | [quiz6](../assignments/quiz6) |
-|04/08| [Reddit Analysis]() | |
-|04/10| [Language Modeling]() | [quiz7](../assignments/quiz7) |
-|04/15| [Language Modeling]() | |
+|04/01| [Gradient Descent](gradient_descent) |  |
+|04/03| [Language Models]() |  |
+|04/08| [Language Models]() | [hw4](../assignments/hw4), [quiz6](../assignments/quiz6) |
+|04/10| [Clustering Analysis]() | |
+|04/15| [Clustering Analysis]() | |
 |04/17| Project Presentations | |
 |04/22| Project Presentations | |
 |04/24| Project Presentations | |
-|04/29| [Clustering Analysis]() | |
+|04/29| [Applications]() | |
 
 
 <!--|03/25| [Phrase Structure Grammar](https://www.slideshare.net/jchoi7s/cs571-phrase-structure-grammar) | | |
