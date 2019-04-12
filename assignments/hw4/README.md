@@ -1,6 +1,11 @@
 Exam Schedule on the Cloud
 =====
 
+## Task 0: Getting Started
+
+* Create a package called `hw4` under the `qtm385` project.
+* Copy everything in [`hw4`](.) to your `hw1` package.  This allows you to call the installed packages in the AWS lambda envorinment.
+
 ## Task 1: Lambda Functiion
 
 Create an AWS lambda function that takes a course ID and returns its final exam schedule.  The input and output follow the same format as the ones specified in the [homework 1](../hw1):
@@ -8,7 +13,7 @@ Create an AWS lambda function that takes a course ID and returns its final exam 
 * Course ID: `<program><number>-<section>` (e.g., `QTM385-1`).
 * Output: `(<day>, <date>, <time>)` (e.g., `('Thursday', '2-May', '3:00 P.M - 5:30 P.M')`).
 
-Feel free to use any code from homework 1.
+Once you are done, compress everything under your `hw4` as a zip file (e.g., `hw4.zip`) and upload to the lambda function.
 
 ## Task 2: API Gateway
 
