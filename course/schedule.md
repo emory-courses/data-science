@@ -32,7 +32,7 @@ Schedule
 |04/17| Project Presentations | |
 |04/22| Project Presentations | |
 |04/24| Project Presentations | |
-|04/29| [Applications]() | |
+|04/29| [Applications]() | [quiz7](../assignments/quiz7) |
 
 
 <!--|03/25| [Phrase Structure Grammar](https://www.slideshare.net/jchoi7s/cs571-phrase-structure-grammar) | | |
