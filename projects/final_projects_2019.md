@@ -5,7 +5,7 @@ Final Projects
 
 * Devising a Text Classifier that Categorizes Bitcoin Related Articles by Subtopic to Analyze the Dynamics of Subtopic Trend +5
   * Sangkyun An, Seung Hyun Lim
-  * [Abstract](https://drive.google.com/open?id=12GFvh9xsB2qYrg4umnOj0XjmjWD6HEr3), [Proposal](https://drive.google.com/open?id=1KFpPnRLZrYwlNLjChJiiPgUk9-I3G1vn) ([slides](https://drive.google.com/open?id=1YErA9u8OTaYI951XnJszn4MIAAd6sPY6)), Final (slides)
+  * [Abstract](https://drive.google.com/open?id=12GFvh9xsB2qYrg4umnOj0XjmjWD6HEr3), [Proposal](https://drive.google.com/open?id=1KFpPnRLZrYwlNLjChJiiPgUk9-I3G1vn) ([slides](https://drive.google.com/open?id=1YErA9u8OTaYI951XnJszn4MIAAd6sPY6)), Final ([slides](https://drive.google.com/file/d/1b7j-Oypy1o3akNYv-ip9335biR0Zmv_q/view?usp=sharing))
 * Treasure Trove: Unlocking the Mystery Behind the Russian Trolls +2
   * Abdul Bingahlan, Alisha Dhanani
   * [Abstract](https://drive.google.com/open?id=1jQUz-HA1AWlRs1hDd686wG_o2VupYzu0), [Proposal](https://drive.google.com/open?id=1myBddIdAcs6kH9x1ZdWKBJV1Xb1cG04I) ([slides](https://drive.google.com/open?id=17QrpkWQswi0d_zcVd4oCWSO-y2G-9aFr)), Final (slides)
@@ -26,7 +26,7 @@ Final Projects
   * [Abstract](https://drive.google.com/open?id=1itqajMVwGBPNSV5bqEr6iiAF3A0jd7f2), [Proposal](https://drive.google.com/open?id=1uQm_Uzm46LqtYwQG2DqAUbgoSlO2U2wg) ([slides](https://drive.google.com/open?id=1Am4FsX7p1nxWMrUbITt9zm_dTcrQIiMu)), Final ([slides](https://drive.google.com/open?id=1xxRdQ40rZig2xL2hqLUKmV_c5wwUIer1))
 * Visualizing the Filmography of Hollywood Stars +4
   * Justin Kim, Eunsung Shin
-  * [Abstract](https://drive.google.com/open?id=1-HHr3Pmy3lzR51GtiPaAIlCVoBl3MPgE), [Proposal](https://drive.google.com/open?id=1D6vQMW_JZ5iHst_4ggRNt2Up14Qsg2Sc) ([slides](https://drive.google.com/open?id=1p3FDwWStxAV_isYmo-NqFK8yKUxTLdRU)), Final (slides)
+  * [Abstract](https://drive.google.com/open?id=1-HHr3Pmy3lzR51GtiPaAIlCVoBl3MPgE), [Proposal](https://drive.google.com/open?id=1D6vQMW_JZ5iHst_4ggRNt2Up14Qsg2Sc) ([slides](https://drive.google.com/open?id=1p3FDwWStxAV_isYmo-NqFK8yKUxTLdRU)), Final ([slides](https://drive.google.com/file/d/1modiLUdlyDdbfqaBbf570fkHEiyJfS8t/view?usp=sharing))
 * Instruction on Building a Successful Game App +11
   * Lisa Kuai, Francis Yin
   * [Abstract](https://drive.google.com/open?id=1CRdbVeUpM0XnKdsMSFFOO9cafM0RFwBQ), [Proposal](https://drive.google.com/open?id=1Mek9gnuszS6WaDRsWuje8HYPlllGi3wz) ([slides](https://drive.google.com/open?id=1dbIrJ9VBARy2hLSHkHOJRRtqXkzM6xYu)), Final ([slides](https://drive.google.com/open?id=1cvn8_yrefyNwlsw-mr6EMpnG2o__tXqr))
