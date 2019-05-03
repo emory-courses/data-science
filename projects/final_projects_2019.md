@@ -35,7 +35,7 @@ Final Projects
   * [Abstract](https://drive.google.com/open?id=1Xnhkc7FhzT6Kdu47awUlPJOaXvVF9CkK), [Proposal](https://drive.google.com/open?id=1jNqEt28W-jB_KXChGqymUMLBQMUOk766) ([slides](https://drive.google.com/open?id=15aSUV1zlREE91cENFJF6OgL-An-igtQe)), Final ([slides](https://drive.google.com/open?id=1KKkRXmARL2N1Ii_kX-pvP_yNkLpN8-Du))
 * Can Tripadvisor Decide the Fate of a Business? +8
   * Jiayin Li, Ningduo Zhao
-  * [Abstract](https://drive.google.com/open?id=1BKYJncT2G0w3nWly7l3iJFVn9CmP-CKl), [Proposal](https://drive.google.com/open?id=1-bme_l7dp3t8nc7BFjWyawCwa_H94aWb) ([slides](https://drive.google.com/open?id=1D9QN28Alc3lDdbln5Oh2Yq4NYEeensVS)), Final (slides)
+  * [Abstract](https://drive.google.com/open?id=1BKYJncT2G0w3nWly7l3iJFVn9CmP-CKl), [Proposal](https://drive.google.com/open?id=1-bme_l7dp3t8nc7BFjWyawCwa_H94aWb) ([slides](https://drive.google.com/open?id=1D9QN28Alc3lDdbln5Oh2Yq4NYEeensVS)), Final ([slides](https://drive.google.com/file/d/13mAZzEknfE5ydSmeN57keWLVdPtqUnVN/view?usp=sharing))
 * Using NLP Methods to Identify Connection Between Movie Subreddits and the Stock Market +2
   * Qiao Lin, Tian Xia
   * [Abstract](https://drive.google.com/open?id=1tjR96NkzNlu0Ggegf_xYmQ42R44FWWNi), [Proposal](https://drive.google.com/file/d/1nuN9W6rEyi0dts6D1ht5zLnal2yDj81k/view?usp=sharing) ([slides](https://drive.google.com/file/d/1H5ccgkigchgsnDWFJM_UF4WW3v08ChAN/view?usp=sharing)), Final ([slides](https://drive.google.com/file/d/1Py2h2hiOOqHWytcRj2To95gGShTYrScl/view?usp=sharing))
