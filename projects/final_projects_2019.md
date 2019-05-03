@@ -8,7 +8,7 @@ Final Projects
   * [Abstract](https://drive.google.com/open?id=12GFvh9xsB2qYrg4umnOj0XjmjWD6HEr3), [Proposal](https://drive.google.com/open?id=1KFpPnRLZrYwlNLjChJiiPgUk9-I3G1vn) ([slides](https://drive.google.com/open?id=1YErA9u8OTaYI951XnJszn4MIAAd6sPY6)), Final ([slides](https://drive.google.com/file/d/1b7j-Oypy1o3akNYv-ip9335biR0Zmv_q/view?usp=sharing))
 * Treasure Trove: Unlocking the Mystery Behind the Russian Trolls +2
   * Abdul Bingahlan, Alisha Dhanani
-  * [Abstract](https://drive.google.com/open?id=1jQUz-HA1AWlRs1hDd686wG_o2VupYzu0), [Proposal](https://drive.google.com/open?id=1myBddIdAcs6kH9x1ZdWKBJV1Xb1cG04I) ([slides](https://drive.google.com/open?id=17QrpkWQswi0d_zcVd4oCWSO-y2G-9aFr)), Final (slides)
+  * [Abstract](https://drive.google.com/open?id=1jQUz-HA1AWlRs1hDd686wG_o2VupYzu0), [Proposal](https://drive.google.com/open?id=1myBddIdAcs6kH9x1ZdWKBJV1Xb1cG04I) ([slides](https://drive.google.com/open?id=17QrpkWQswi0d_zcVd4oCWSO-y2G-9aFr)), Final ([slides](https://drive.google.com/file/d/1w7ccvXDL7Ys8ACALi5g_1zRzLd8yvMcy/view?usp=sharing))
 * Top Tech Corporations' Core Competitiveness in Job Markets: Analysis of Employee Reviews +7
   * Kemin Cao
   * [Abstract](https://drive.google.com/open?id=1RTf88J5BQAPDdNOq8HoBX_XVPdYPLoKH), [Proposal](https://drive.google.com/open?id=13nW0ssv2-uMNX1bz2Deay3Ibk8u0AjEF) ([slides](https://drive.google.com/open?id=1vxOuXTQELFwwF_yVQ2ZSaH1QVgxJubkx)), Final ([slides](https://drive.google.com/open?id=1tYuTAqIWxldX7p3_qfYGqYIW5yzpDJbA))
@@ -38,7 +38,7 @@ Final Projects
   * [Abstract](https://drive.google.com/open?id=1BKYJncT2G0w3nWly7l3iJFVn9CmP-CKl), [Proposal](https://drive.google.com/open?id=1-bme_l7dp3t8nc7BFjWyawCwa_H94aWb) ([slides](https://drive.google.com/open?id=1D9QN28Alc3lDdbln5Oh2Yq4NYEeensVS)), Final (slides)
 * Using NLP Methods to Identify Connection Between Movie Subreddits and the Stock Market +2
   * Qiao Lin, Tian Xia
-  * [Abstract](https://drive.google.com/open?id=1tjR96NkzNlu0Ggegf_xYmQ42R44FWWNi), [Proposal](https://drive.google.com/file/d/1nuN9W6rEyi0dts6D1ht5zLnal2yDj81k/view?usp=sharing) ([slides](https://drive.google.com/file/d/1H5ccgkigchgsnDWFJM_UF4WW3v08ChAN/view?usp=sharing)), Final (slides)
+  * [Abstract](https://drive.google.com/open?id=1tjR96NkzNlu0Ggegf_xYmQ42R44FWWNi), [Proposal](https://drive.google.com/file/d/1nuN9W6rEyi0dts6D1ht5zLnal2yDj81k/view?usp=sharing) ([slides](https://drive.google.com/file/d/1H5ccgkigchgsnDWFJM_UF4WW3v08ChAN/view?usp=sharing)), Final ([slides](https://drive.google.com/file/d/1Py2h2hiOOqHWytcRj2To95gGShTYrScl/view?usp=sharing))
 * Broadening Horizons: A Sentiment Analysis of Music Reviews +1
   * Jake Nachlas, Matt Organisak
   * [Abstract](https://drive.google.com/open?id=13aYgY-6Qod8ybMRxj7F9Gry3NQndSR7u), [Proposal](https://drive.google.com/open?id=1pf4IBlhvCHfBcxOqlunagVAiEVy2O53c) ([slides](https://drive.google.com/open?id=1Kigom90ED63BH9WyMdZ_GQwAGT8MYahM)), Final ([slides](https://drive.google.com/open?id=1S0uyje3sE812eOvpV7c37bwmCWiYLgJw))
